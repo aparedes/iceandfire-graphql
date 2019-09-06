@@ -1,4 +1,4 @@
-![](https://github.com/aparedes/iceandfire-graphql/workflows/building/badge.svg)
+![](https://github.com/aparedes/iceandfire-graphql/workflows/mastrcheck/badge.svg)
 
 An API of Ice and Fire GraphQL Wrapper
 =====================
