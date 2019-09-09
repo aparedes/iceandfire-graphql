@@ -41,4 +41,4 @@ jobs:
       run: |
         yarn install
         yarn build
-        yarn now --prod
+        yarn now --prod --token ${{ secrets.NOW_TOKEN }}
