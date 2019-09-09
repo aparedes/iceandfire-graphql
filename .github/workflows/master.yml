@@ -37,7 +37,7 @@ jobs:
       with:
         node-version: '12.x'
 
-    - name: yarn install, build, and test
+    - name: yarn install, build, and publish
       run: |
         yarn install
         yarn build
