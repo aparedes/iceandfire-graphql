@@ -11,8 +11,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macOS-latest]
-    # runs-on: ubuntu-latest
-   
+
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js 12.x
@@ -24,7 +23,22 @@ jobs:
       run: |
         yarn install
         yarn build
-        # yarn prettier --config ./prettier.config.js --write src/api/cachedData/cache.js 
-        yarn test
+        yarn test  
       env:
         CI: true
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - needs: build
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+
+    - name: yarn install, build, and test
+      run: |
+        yarn install
+        yarn build
+        yarn now --prod
